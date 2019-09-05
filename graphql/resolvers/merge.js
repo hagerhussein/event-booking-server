@@ -55,8 +55,6 @@ const transformBooking = booking => {
   };
 };
 
-// exports.user = user;
-// exports.singleEvent = singleEvent;
-// exports.events = events;
+
 exports.transformEvent = transformEvent;
 exports.transformBooking = transformBooking;

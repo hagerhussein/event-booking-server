@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 
 const graphQlSchema = require("./graphql/schema/index");
 const graphQlResolvers = require("./graphql/resolvers/index");
+const isAuth = require('./middleware/is-auth');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -17,6 +18,7 @@ connection.once("open", () => console.log("MongoDB connection is successful"));
 
 app
   .use(bodyParser.json())
+  .use(isAuth)
   .use(
     "/graphql",
     graphQlHttp({
